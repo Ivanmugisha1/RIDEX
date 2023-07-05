@@ -6,178 +6,184 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Survey FOrm</title>
 <style>
-  main {
-  text-align: center;
-  background-color: #92869c;
-  background-blend-mode: lighten;
-  max-width: 500px;
-  margin: 20px auto;
-  border-radius: 50px;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
-  color: black;
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
 }
-body {
-  padding:20px;
-  height:100vh;
-  width:100vw;
-  background-color:#2A2A49 ;
-  color: white;
-}
+
 .container{
-width: 40%;
-background-color:#2A2A49 ;
-margin-left: 30px;
-}
-form {
-  width: 60vw;
-  max-width: 500px;
-  min-width: 300px;
-  margin: 0 auto;
-  padding-bottom: 2em;
-}
-h1{
-width: 100%;
-height: 100px;
-margin: 30px 0 0 150px;
-font-family: sans-serif;
-color:white;
-}
-#description{
-color:white;
-font-family: sans-serif;
-font-style: oblique;
-margin: 0 0 20px 30px;
-}
- h1,p {
-  margin: 1em auto;
-  text-align: center;
-  margin-bottom:15px;
-  margin-top: 0;
-  }
-
-input[class=name]{
-width: 147%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #ccc;
-border-radius: 4px;
-height:3.0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40.1%);
 }
 
-input[type=radio]{
-  width: 15px;
+.container form{
+  padding:20px;
+  width:800px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
   font-size: 20px;
-  margin:0.5rem 0;
-}
-label{
-  font-family: sans-serif;
-  font-size: 1.3em;
-  font-weight: lighter;
-  margin:0.5rem 0;
-  
-}
-select{
-  height:3em;
-  width:200%;
-  min-width: 300px;
-}
-p{
-  font-family:sans-serif;
-  font-size: 1.5em;
-  margin: 15px 0 20px 0;
-}
-#dropdown, button, textarea{
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #ccc;
-border-radius: 4px;}
-textarea{
-  height: 150px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
 }
 
-button {
+.container form .row .col .inputBox{
+  margin:20px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
   display: block;
-  width: 50%;
-  margin: 0.5em auto;
-  height: 2.5em;
-  font-size: 1rem;
-  background-color: #37AF65;
-  min-width: 40px;
-  color:white;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #27ae60;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+  background: #2ecc71;
 }
 
 </style>
 </head>
 <body>
-<h1 id="title">freeCodeCamp Survey Form</h1>
-<p id="description">
-Thank you for taking the time to help us improve the platform
-<p>
 <div class="container">
-<form id="survey-form" class="survey-form" action='https://survey-form.freecodecamp.rocks'>
-<label id="name-label">Name</label>
- <input type="text" id="name" class="name" placeholder="enter your name" required>
-  <label id="email-label">Email</label>
- <input type="email" id="email"  class="name" placeholder="enter your email" required>
-  <label id="number-label">Age(optional)</label>
- <input type="number" id="number"  class="name" placeholder="Age" min="10" max="99">
-  <label id="name-label">Which option best describes your current role?</label><br>
-  <select id="dropdown"> 
-    <option value="select role">Select Current Role</option>
-    <option value="Student">Student</option>
-    <option value="full time learner">Full Time Learner</option>
-    <option value="prefer not to say">Prefer Not To Say</option>
-    <option value="others">Others</option>
- </select>
-<label> Would you recommend freeCodeCamp to a friend?</label><br><br>
-<input type="radio" name="recommend" value="definitely">
-<input type="radio" name="recommend" value="definitely">
-<label> Definitely</label><br>
-<input type="radio" name="recommend" value="maybe">
-<input type="radio" name="recommend" value="maybe">
-<label> Maybe</label><br>
-<input type="radio" name="not recommend" value="Not sure">
-<input type="radio" name="not recommend" value="Not sure">
-<label> Not sure</label><br><br>
-<label id="name-label">What is your favorite feature of freeCodeCamp?</label>
-  <select id="dropdown"> 
-    <option value="">select an option</option>
-    <option value="1">challenges</option>
-    <option value="2">projects</option>
-    <option value="3">community</option>
-    <option value="4">open source</option>
- </select>
-<label>What would you like to see improved? (Check all that apply)</label><br><br>
-<input type="checkbox" name="value" id="value" value="Front-end Projects">
-<label> Front-end Projects</label><br>
-<input type="checkbox"  name="value" id="value"  value="Back-end Projects">
-<label>Back-end Projects</label><br>
-<input type="checkbox"  name="value" id="value"  value="Data Visualization">
-<label>Data Visualization</label><br>
-<input type="checkbox"  name="value" id="value"   value="Challenges">
-<label>Challenges</label><br>
-<input type="checkbox"  name="value" id="value"  value="Open Source Community">
-<label>Open Source Community</label><br>
-<input type="checkbox"  name="value"  id="value" value="Gitter help rooms">
-<label>Gitter help rooms</label><br>
-<input type="checkbox"  name="value" id="value"  value="Videos">
-<label>Videos</label><br>
-<input type="checkbox"  name="value"  id="value" value="Wiki">
-<label>Wiki</label><br>
-<input type="checkbox"  name="value" id="value" value=" Forum">
-<label>Forum</label><br>
-<input type="checkbox"  name="value"  id="value" value="city" value="City Meetups">
-<label>City Meetups</label><br><br>
 
-<label>Any comments or suggestions?</label>
-<textarea rows="3" cols="30" name="textarea">Enter your comment here...</textarea><br><br>
-<button id="submit" type="submit" value="Submit">Submit</button>
-</form>
-</div>
+    <form action="">
 
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">billing address</h3>
+
+                <div class="inputBox">
+                    <span>full name :</span>
+                    <input type="text" placeholder="Ivan Jo">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" placeholder="example@example.com">
+                </div>
+                <div class="inputBox">
+                    <span>address :</span>
+                    <input type="text" placeholder="room - street - locality">
+                </div>
+                <div class="inputBox">
+                    <span>city :</span>
+                    <input type="text" placeholder="Kigali">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>state :</span>
+                        <input type="text" placeholder="Rwanda">
+                    </div>
+                    <div class="inputBox">
+                        <span>zip code :</span>
+                        <input type="text" placeholder="123 456">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">payment</h3>
+
+                <div class="inputBox">
+                    <span>cards accepted :</span>
+                    <img src="card_img.png" alt="">
+                </div>
+                <div class="inputBox">
+                    <span>name on card :</span>
+                    <input type="text" placeholder="mr. Ivan Jo">
+                
+                </div>
+                <div class="inputBox">
+                    <span>credit card number :</span>
+                    <input type="number" placeholder="1111-2222-3333-4444">
+                </div>
+                <div class="inputBox">
+                    <span>exp month :</span>
+                    <input type="text" placeholder="january">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>exp year :</span>
+                        <input type="number" placeholder="2022">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" placeholder="1234">
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+
+        <input type="submit" value="proceed to checkout" class="submit-btn">
+
+    </form>
+
+</div>  
 
 </body>
 </html>
